@@ -8,7 +8,7 @@ public class Blocks : MonoBehaviour
     public GameObject cube2;
     public GameObject cube3;
     public GameObject cube4;
-    public GameObject original;
+    public GameObject circle;
     public float time = 0f;
     public float timeDelay = 2f;
     private int RadNum;
@@ -24,8 +24,8 @@ public class Blocks : MonoBehaviour
             {
                 timeDelay += .1f;
             }
-            RadNum = Random.Range(1,5);
-            Vector2 randPos = new Vector2(Random.Range(5,18),80);
+            RadNum = Random.Range(1,6);
+            Vector2 randPos = new Vector2(Random.Range(-8,8),80);
             if (RadNum == 1)
             { 
                 Instantiate(cube,randPos,Quaternion.identity);
@@ -38,9 +38,13 @@ public class Blocks : MonoBehaviour
             {
                 Instantiate(cube3,randPos,Quaternion.identity);
             }
-            else
+            else if (RadNum == 4)
             {
                 Instantiate(cube4,randPos,Quaternion.identity);
+            }
+            else
+            {
+                Instantiate(circle,randPos,Quaternion.identity);
             }
         }
     }
