@@ -5,8 +5,13 @@ using UnityEngine;
 public class Blocks : MonoBehaviour
 {
     public GameObject cube;
+    public GameObject cube2;
+    public GameObject cube3;
+    public GameObject cube4;
+    public GameObject original;
     public float time = 0f;
     public float timeDelay = 2f;
+    private int RadNum;
 
     void Update()
     {
@@ -19,7 +24,24 @@ public class Blocks : MonoBehaviour
             {
                 timeDelay += .1f;
             }
-            Instantiate(cube,transform.position,Quaternion.identity);
+            RadNum = Random.Range(1,5);
+            Vector2 randPos = new Vector2(Random.Range(5,18),80);
+            if (RadNum == 1)
+            { 
+                Instantiate(cube,randPos,Quaternion.identity);
+            }
+            else if (RadNum == 2)
+            {
+                Instantiate(cube2,randPos,Quaternion.identity);
+            }
+            else if (RadNum == 3)
+            {
+                Instantiate(cube3,randPos,Quaternion.identity);
+            }
+            else
+            {
+                Instantiate(cube4,randPos,Quaternion.identity);
+            }
         }
     }
 }
