@@ -11,10 +11,12 @@ public class Floating : MonoBehaviour
     public UnityEvent buttonClick;
     public GameObject b;
     public GameObject screen;
+    public GameObject world1;
 
     void Start()
     {
         originalPos = transform.position.y;
+        world1.SetActive(false);
     }
 
     void Update()
@@ -25,6 +27,8 @@ public class Floating : MonoBehaviour
         Debug.Log("Hallo");
         b.SetActive(false);
         screen.SetActive(false);
+        world1.SetActive(true);
+
         }   
 
         if (isFloating == false)
@@ -34,6 +38,14 @@ public class Floating : MonoBehaviour
             if (transform.position.y > 20+originalPos)
             {
                 timer -= .025f;
+            }
+            if (transform.position.y > 23+originalPos)
+            {
+                timer -= .01f;
+            }
+            if (transform.position.y > 24+originalPos)
+            {
+                timer -= .005f;
             }
             if (transform.position.y > 25+originalPos)
             {
@@ -47,6 +59,14 @@ public class Floating : MonoBehaviour
             if (transform.position.y < -20+originalPos)
             {
                 timer += .025f;
+            }
+            if (transform.position.y < -23+originalPos)
+            {
+                timer += .01f;
+            }
+            if (transform.position.y < -24+originalPos)
+            {
+                timer += .005f;
             }
             if (transform.position.y < -25+originalPos)
             {
