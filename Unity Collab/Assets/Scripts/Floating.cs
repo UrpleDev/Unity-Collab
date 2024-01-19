@@ -10,7 +10,6 @@ public class Floating : MonoBehaviour
     private float originalPos = 0;
     public UnityEvent buttonClick;
     public GameObject b;
-    public GameObject screen;
     public GameObject world1;
 
     void Start()
@@ -21,13 +20,13 @@ public class Floating : MonoBehaviour
 
     void Update()
     {
+
         if (Input.GetMouseButtonDown(0))
         {
-        buttonClick.Invoke();
-        Debug.Log("Hallo");
-        b.SetActive(false);
-        screen.SetActive(false);
-        world1.SetActive(true);
+            buttonClick.Invoke();
+            world1.SetActive(true);
+            Debug.Log("Hallo");
+            b.SetActive(false);
 
         }   
 
