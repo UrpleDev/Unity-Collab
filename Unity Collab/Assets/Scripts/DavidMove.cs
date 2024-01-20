@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Davidmove : MonoBehaviour
 {
-    [SerializeField] Transform tr;
     void Start()
     {
         transform.position = new Vector2(transform.position.x+13,transform.position.y+2);
