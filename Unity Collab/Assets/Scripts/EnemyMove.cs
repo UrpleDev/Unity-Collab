@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EnemyMove : MonoBehaviour
 {
+    private float health = 100;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,5 +19,6 @@ public class EnemyMove : MonoBehaviour
         {
             Destroy(this);
         }
+        //if ()
     }
 }

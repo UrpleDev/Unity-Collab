@@ -15,7 +15,6 @@ public class Floating : MonoBehaviour
     void Start()
     {
         originalPos = transform.position.y;
-        world1.SetActive(false);
     }
 
     void Update()
@@ -24,8 +23,8 @@ public class Floating : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             buttonClick.Invoke();
-            world1.SetActive(true);
             Debug.Log("Hallo");
+            world1.SetActive(true);
             b.SetActive(false);
 
         }   

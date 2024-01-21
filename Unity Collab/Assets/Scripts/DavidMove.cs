@@ -4,15 +4,20 @@ using UnityEngine;
 
 public class Davidmove : MonoBehaviour
 {
+    public GameObject enemy;
+
     void Start()
     {
-        transform.position = new Vector2(transform.position.x+13,transform.position.y+2);
+        transform.position = new Vector2(transform.position.x+14,transform.position.y+2);
     }
 
     void Update()
     {
-        transform.position = new Vector2(transform.position.x-.002f,transform.position.y);
-
+        transform.position = new Vector2(transform.position.x-.02f,-1);
+        if (transform.position.x > enemy.transform.position.x+1 && transform.position.x < enemy.transform.position.x-1)
+        {
+            transform.position = new Vector2(transform.position.x+.03f,-1);
+        }
         if (transform.position.x < -4)
         {
             Destroy(this);
