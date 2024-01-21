@@ -14,10 +14,7 @@ public class Davidmove : MonoBehaviour
     void Update()
     {
         transform.position = new Vector2(transform.position.x-.02f,-1);
-        if (transform.position.x > enemy.transform.position.x+1 && transform.position.x < enemy.transform.position.x-1)
-        {
-            transform.position = new Vector2(transform.position.x+.03f,-1);
-        }
+
         if (transform.position.x < -4)
         {
             Destroy(this);
